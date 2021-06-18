@@ -11,11 +11,12 @@ use crate::net::TcpKeepalive;
 
 #[cfg(any(target_os = "openbsd", target_os = "netbsd", target_os = "haiku"))]
 use libc::SO_KEEPALIVE as KEEPALIVE_TIME;
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(any(target_os = "macos", target_os = "ios", target_os = "watchos"))]
 use libc::TCP_KEEPALIVE as KEEPALIVE_TIME;
 #[cfg(not(any(
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "openbsd",
     target_os = "netbsd",
     target_os = "haiku"
@@ -261,6 +262,7 @@ pub(crate) fn set_keepalive_params(socket: TcpSocket, keepalive: TcpKeepalive) -
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]
@@ -325,6 +327,7 @@ pub(crate) fn get_keepalive_time(socket: TcpSocket) -> io::Result<Option<Duratio
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -348,6 +351,7 @@ fn set_keepalive_interval(socket: TcpSocket, interval: Duration) -> io::Result<(
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -382,6 +386,7 @@ pub(crate) fn get_keepalive_interval(socket: TcpSocket) -> io::Result<Option<Dur
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -401,6 +406,7 @@ fn set_keepalive_retries(socket: TcpSocket, retries: u32) -> io::Result<()> {
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -456,12 +462,10 @@ pub fn accept(listener: &net::TcpListener) -> io::Result<(net::TcpStream, Socket
     // OSes inherit the non-blocking flag from the listener, so we just have to
     // set `CLOEXEC`.
     #[cfg(any(
-        all(
-            target_arch = "x86",
-            target_os = "android"
-        ),
-        target_os = "ios", 
-        target_os = "macos", 
+        all(target_arch = "x86", target_os = "android"),
+        target_os = "ios",
+        target_os = "watchos",
+        target_os = "macos",
         target_os = "solaris"
     ))]
     let stream = {

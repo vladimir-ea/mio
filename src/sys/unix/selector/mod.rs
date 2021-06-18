@@ -18,6 +18,7 @@ pub(crate) use self::epoll::{event, Event, Events, Selector};
     target_os = "dragonfly",
     target_os = "freebsd",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "macos",
     target_os = "netbsd",
     target_os = "openbsd"
@@ -28,6 +29,7 @@ mod kqueue;
     target_os = "dragonfly",
     target_os = "freebsd",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "macos",
     target_os = "netbsd",
     target_os = "openbsd"

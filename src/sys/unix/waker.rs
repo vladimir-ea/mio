@@ -61,7 +61,7 @@ mod eventfd {
 #[cfg(any(target_os = "linux", target_os = "android"))]
 pub use self::eventfd::Waker;
 
-#[cfg(any(target_os = "freebsd", target_os = "ios", target_os = "macos"))]
+#[cfg(any(target_os = "freebsd", target_os = "ios", target_os = "macos", target_os = "watchos"))]
 mod kqueue {
     use crate::sys::Selector;
     use crate::Token;
@@ -95,7 +95,7 @@ mod kqueue {
     }
 }
 
-#[cfg(any(target_os = "freebsd", target_os = "ios", target_os = "macos"))]
+#[cfg(any(target_os = "freebsd", target_os = "ios", target_os = "macos", target_os = "watchos"))]
 pub use self::kqueue::Waker;
 
 #[cfg(any(
