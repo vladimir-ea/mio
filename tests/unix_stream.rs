@@ -183,6 +183,7 @@ fn unix_stream_shutdown_read() {
         target_os = "dragonfly",
         target_os = "freebsd",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "netbsd",
         target_os = "openbsd"
@@ -230,6 +231,7 @@ fn unix_stream_shutdown_write() {
         target_os = "dragonfly",
         target_os = "freebsd",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "netbsd",
         target_os = "openbsd"
@@ -292,6 +294,7 @@ fn unix_stream_shutdown_both() {
         target_os = "dragonfly",
         target_os = "freebsd",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "netbsd",
         target_os = "openbsd"

@@ -30,6 +30,7 @@ pub struct TcpKeepalive {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
         target_os = "windows",
@@ -39,6 +40,7 @@ pub struct TcpKeepalive {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]
@@ -277,6 +279,7 @@ impl TcpSocket {
             target_os = "linux",
             target_os = "macos",
             target_os = "ios",
+            target_os = "watchos",
             target_os = "freebsd",
             target_os = "netbsd",
         )))
@@ -285,6 +288,7 @@ impl TcpSocket {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]
@@ -306,6 +310,7 @@ impl TcpSocket {
             target_os = "linux",
             target_os = "macos",
             target_os = "ios",
+            target_os = "watchos",
             target_os = "freebsd",
             target_os = "netbsd",
         )))
@@ -314,6 +319,7 @@ impl TcpSocket {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]
@@ -434,6 +440,7 @@ impl TcpKeepalive {
             target_os = "linux",
             target_os = "macos",
             target_os = "ios",
+            target_os = "watchos",
             target_os = "freebsd",
             target_os = "netbsd",
             target_os = "windows"
@@ -443,6 +450,7 @@ impl TcpKeepalive {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
         target_os = "windows"
@@ -465,6 +473,7 @@ impl TcpKeepalive {
             target_os = "linux",
             target_os = "macos",
             target_os = "ios",
+            target_os = "watchos",
             target_os = "freebsd",
             target_os = "netbsd",
         )))
@@ -473,6 +482,7 @@ impl TcpKeepalive {
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]

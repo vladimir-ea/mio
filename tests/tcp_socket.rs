@@ -79,6 +79,7 @@ fn set_keepalive_time() {
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
     target_os = "windows"
@@ -105,6 +106,7 @@ fn set_keepalive_interval() {
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]

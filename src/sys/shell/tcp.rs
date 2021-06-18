@@ -88,6 +88,7 @@ pub(crate) fn set_keepalive_params(_: TcpSocket, _: TcpKeepalive) -> io::Result<
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
     target_os = "solaris",
@@ -100,6 +101,7 @@ pub(crate) fn get_keepalive_time(_: TcpSocket) -> io::Result<Option<Duration>> {
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -111,6 +113,7 @@ pub(crate) fn get_keepalive_interval(_: TcpSocket) -> io::Result<Option<Duration
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]

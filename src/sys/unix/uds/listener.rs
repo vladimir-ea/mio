@@ -40,6 +40,7 @@ pub(crate) fn accept(listener: &net::UnixListener) -> io::Result<(UnixStream, So
 
     #[cfg(not(any(
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "netbsd",
         target_os = "solaris",
@@ -63,6 +64,7 @@ pub(crate) fn accept(listener: &net::UnixListener) -> io::Result<(UnixStream, So
 
     #[cfg(any(
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "netbsd",
         target_os = "solaris",

@@ -11,11 +11,12 @@ use crate::sys::unix::net::{new_socket, socket_addr, to_socket_addr};
 
 #[cfg(any(target_os = "openbsd", target_os = "netbsd"))]
 use libc::SO_KEEPALIVE as KEEPALIVE_TIME;
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(any(target_os = "macos", target_os = "ios", target_os = "watchos"))]
 use libc::TCP_KEEPALIVE as KEEPALIVE_TIME;
 #[cfg(not(any(
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "openbsd",
     target_os = "netbsd",
 )))]
@@ -256,6 +257,7 @@ pub(crate) fn set_keepalive_params(socket: TcpSocket, keepalive: TcpKeepalive) -
         target_os = "linux",
         target_os = "macos",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "freebsd",
         target_os = "netbsd",
     ))]
@@ -319,6 +321,7 @@ pub(crate) fn get_keepalive_time(socket: TcpSocket) -> io::Result<Option<Duratio
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -342,6 +345,7 @@ fn set_keepalive_interval(socket: TcpSocket, interval: Duration) -> io::Result<(
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -376,6 +380,7 @@ pub(crate) fn get_keepalive_interval(socket: TcpSocket) -> io::Result<Option<Dur
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -395,6 +400,7 @@ fn set_keepalive_retries(socket: TcpSocket, retries: u32) -> io::Result<()> {
     target_os = "linux",
     target_os = "macos",
     target_os = "ios",
+    target_os = "watchos",
     target_os = "freebsd",
     target_os = "netbsd",
 ))]
@@ -452,6 +458,7 @@ pub fn accept(listener: &net::TcpListener) -> io::Result<(net::TcpStream, Socket
     #[cfg(any(
         all(target_arch = "x86", target_os = "android"),
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos",
         target_os = "solaris"
     ))]

@@ -29,6 +29,7 @@ fn fmt_debug() {
         target_os = "dragonfly",
         target_os = "freebsd",
         target_os = "ios",
+        target_os = "watchos",
         target_os = "macos"
     ))]
     {
